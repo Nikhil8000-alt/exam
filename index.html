@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dct24 - Online Learning Platform</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- NO BROWSER ALERTS POLICY -->
+    <!-- This website uses custom modal dialogs instead of browser alerts -->
+    <!-- All alert(), confirm(), and prompt() calls are overridden with custom modals -->
+    <!-- This ensures professional user experience across all devices -->
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-graduation-cap"></i> Dct24</h1>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#onlineTests">Courses</a></li>
+                    <li><a href="#courses">Features</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button id="studentLoginBtn" class="btn btn-primary">LogIn</button>
+                <span id="userInfo" class="user-info" style="display: none;"></span>
+                <button id="logoutBtn" class="btn btn-secondary" style="display: none;">Logout</button>
+                <button id="adminBtn" class="btn btn-admin" style="display: none;">Admin</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Learn From The Best Educators</h2>
+                <p>Join millions of students learning with Dct24. Access quality education and test your knowledge with our comprehensive exam system.</p>
+                <div class="hero-buttons" style="display: flex !important; gap: 1rem; margin-top: 2rem;">
+                    <button class="btn btn-cta" id="quickDemoBtn" style="display: block !important; visibility: visible !important;">Quick Demo Test</button>
+                    <button class="btn btn-secondary" id="loginPromptBtn" style="display: block !important; visibility: visible !important;">Login for Full Tests</button>
+                    <button class="btn btn-cta" id="startExamBtn" style="display: none;">Start Exam</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-book-open"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>10K+</h3>
+                    <p>Students</p>
+                </div>
+                <div class="stat-card">
+                    <h3>500+</h3>
+                    <p>Questions</p>
+                </div>
+                <div class="stat-card">
+                    <h3>100+</h3>
+                    <p>Instructors</p>
+                </div>
+                <div class="stat-card">
+                    <h3>95%</h3>
+                    <p>Success Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Tests Section -->
+    <section class="online-tests" id="onlineTests">
+        <div class="container">
+            <div class="section-header">
+                <h2>Online Tests</h2>
+                <p>Choose from our comprehensive test series for RS-CIT and CCC</p>
+            </div>
+            <div class="courses-grid">
+                <!-- RS-CIT Courses -->
+                <div class="course-card" data-course="rscit">
+                    <div class="course-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>RS-CIT ONLINE TEST</h3>
+                    <p>Complete RS-CIT practice tests with latest syllabus</p>
+                    <div class="course-stats">
+                        <span><i class="fas fa-question-circle"></i> 500+ Questions</span>
+                        <span><i class="fas fa-clock"></i> 90 Minutes</span>
+                    </div>
+                    <button class="btn btn-exam-start" data-course="rscit">
+                        <i class="fas fa-play"></i> Start Exam
+                    </button>
+                </div>
+
+                <div class="course-card" data-course="rscit-subject">
+                    <div class="course-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>RS-CIT SUBJECT-WISE</h3>
+                    <p>Chapter-wise practice tests for focused preparation</p>
+                    <div class="course-stats">
+                        <span><i class="fas fa-list"></i> 15 Chapters</span>
+                        <span><i class="fas fa-clock"></i> 30 Minutes</span>
+                    </div>
+                    <button class="btn btn-exam-start" data-course="rscit-subject">
+                        <i class="fas fa-play"></i> Start Exam
+                    </button>
+                </div>
+
+                <div class="course-card" data-course="rscit-mock">
+                    <div class="course-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>RS-CIT MOCK TEST</h3>
+                    <p>Full-length mock tests with real exam interface</p>
+                    <div class="course-stats">
+                        <span><i class="fas fa-stopwatch"></i> 90 Minutes</span>
+                        <span><i class="fas fa-medal"></i> Instant Results</span>
+                    </div>
+                    <button class="btn btn-exam-start" data-course="rscit-mock">
+                        <i class="fas fa-play"></i> Start Exam
+                    </button>
+                </div>
+
+                <!-- CCC Courses -->
+                <div class="course-card" data-course="ccc">
+                    <div class="course-icon">
+                        <i class="fas fa-computer"></i>
+                    </div>
+                    <h3>CCC ONLINE TEST</h3>
+                    <p>Comprehensive CCC course with practice tests</p>
+                    <div class="course-stats">
+                        <span><i class="fas fa-question-circle"></i> 800+ Questions</span>
+                        <span><i class="fas fa-clock"></i> 90 Minutes</span>
+                    </div>
+                    <button class="btn btn-exam-start" data-course="ccc">
+                        <i class="fas fa-play"></i> Start Exam
+                    </button>
+                </div>
+
+                <div class="course-card" data-course="ccc-subject">
+                    <div class="course-icon">
+                        <i class="fas fa-bookmark"></i>
+                    </div>
+                    <h3>CCC SUBJECT-WISE</h3>
+                    <p>Topic-wise tests covering all CCC modules</p>
+                    <div class="course-stats">
+                        <span><i class="fas fa-list"></i> 12 Modules</span>
+                        <span><i class="fas fa-clock"></i> 45 Minutes</span>
+                    </div>
+                    <button class="btn btn-exam-start" data-course="ccc-subject">
+                        <i class="fas fa-play"></i> Start Exam
+                    </button>
+                </div>
+
+                <div class="course-card" data-course="ccc-practical">
+                    <div class="course-icon">
+                        <i class="fas fa-keyboard"></i>
+                    </div>
+                    <h3>CCC PRACTICAL</h3>
+                    <p>Hands-on practical tests for typing and applications</p>
+                    <div class="course-stats">
+                        <span><i class="fas fa-keyboard"></i> Typing Tests</span>
+                        <span><i class="fas fa-clock"></i> 60 Minutes</span>
+                    </div>
+                    <button class="btn btn-exam-start" data-course="ccc-practical">
+                        <i class="fas fa-play"></i> Start Exam
+                    </button>
+                </div>
+
+                <!-- Quick Access Cards -->
+                <div class="course-card featured" data-course="free-test">
+                    <div class="course-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>FREE MOCK TEST</h3>
+                    <p>Try our platform with complimentary mock tests</p>
+                    <div class="course-stats">
+                        <span><i class="fas fa-star"></i> No Registration</span>
+                        <span><i class="fas fa-clock"></i> 30 Minutes</span>
+                    </div>
+                    <div class="course-badge">FREE</div>
+                    <button class="btn btn-exam-start" data-course="free-test">
+                        <i class="fas fa-play"></i> Start Free Test
+                    </button>
+                </div>
+
+                <div class="course-card premium" data-course="premium">
+                    <div class="course-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>PREMIUM COURSE</h3>
+                    <p>Complete course with video lectures and doubt solving</p>
+                    <div class="course-stats">
+                        <span><i class="fas fa-video"></i> Video Lectures</span>
+                        <span><i class="fas fa-clock"></i> 120 Minutes</span>
+                    </div>
+                    <div class="course-badge premium">PREMIUM</div>
+                    <button class="btn btn-exam-start" data-course="premium">
+                        <i class="fas fa-play"></i> Start Premium Exam
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exam Instructions Section (Only for logged in users) -->
+    <section class="exam-instructions" id="examInstructions" style="display: none;">
+        <div class="container">
+            <h2>Exam Instructions</h2>
+            <div class="instructions-grid">
+                <div class="instruction-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Time Limit</h3>
+                    <p>Complete the exam within the given time limit. Timer will be displayed during the exam.</p>
+                </div>
+                <div class="instruction-card">
+                    <i class="fas fa-list-check"></i>
+                    <h3>Multiple Choice</h3>
+                    <p>Each question has 4 options. Select the most appropriate answer for each question.</p>
+                </div>
+                <div class="instruction-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Instant Results</h3>
+                    <p>Get your results immediately after submitting the exam with detailed analysis.</p>
+                </div>
+                <div class="instruction-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Single Session</h3>
+                    <p>Each user can take the exam from one device at a time for security purposes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Features Section -->
+    <section class="features" id="courses">
+        <div class="container">
+                            <h2>Why Choose Dct24?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Online Learning</h3>
+                    <p>Access courses and exams from anywhere, anytime with our user-friendly platform.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Expert Instructors</h3>
+                    <p>Learn from industry experts and experienced educators with proven track records.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Certification</h3>
+                    <p>Earn certificates upon successful completion of courses and examinations.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor your learning progress with detailed analytics and performance insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Dct24</h3>
+                    <p>Your gateway to quality education and professional growth through online learning.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-envelope"></i> info@dct24.com</p>
+                    <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                    <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dct24. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDKs -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/custom-modal.js"></script>
+    <!-- <script type="module" src="js/custom-reload-modal.js"></script> DISABLED - No reload dialogs -->
+    <script type="module" src="js/admin-login-modal.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/questions.js"></script>
+    <script type="module" src="js/exam.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html> 
